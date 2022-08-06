@@ -115,7 +115,7 @@ resource "azurerm_network_interface_backend_address_pool_association" "main" {
 
 resource "azurerm_linux_virtual_machine" "main" {
   count                           = var.number
-  name                            = "${var.prefix}-vm"
+  name                            = "${var.prefix}-vm-${count.index}"
   resource_group_name             = azurerm_resource_group.main.name
   location                        = azurerm_resource_group.main.location
   size                            = "Standard_D2s_v3"
