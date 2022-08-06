@@ -5,8 +5,28 @@
 		"subscription_id": "{{env `ARM_SUBSCRIPTION_ID`}}"
 	},
 	"builders": [{
-		**YOUR CODE HERE**
-	}],
+		"type": "azure-arm",
+	
+		"client_id": "ff081101-fe37-4e8f-b994-814be529da7a",
+		"client_secret": "SA88Q~1~Wy0zwl1LM1jhu.KHbrrRJwDyhpYaKbIG",
+		"subscription_id": "60f90b24-74e9-49ca-bd84-cb47478cc5e5",
+	
+		"os_type": "Linux",
+		"image_publisher": "Canonical",
+		"image_offer": "UbuntuServer",
+		"image_sku": "18.04-LTS",
+	
+		"managed_image_resource_group_name": "packer-rg",
+		"managed_image_name": "myPackerImage",
+
+		"azure_tags": {
+			"dept": "Project_1",
+			"task": "Image deployment"
+		},
+	
+		"location": "West Europe",
+		"vm_size": "Standard_D2s_v3"
+	  }],
 	"provisioners": [{
 		"inline": [
 			"echo 'Hello, World!' > index.html",
